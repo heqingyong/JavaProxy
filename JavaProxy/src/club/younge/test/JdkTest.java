@@ -33,8 +33,9 @@ public class JdkTest {
 	public static void main(String[] args) throws Throwable {
 		People people = (People) Proxy.newProxyInstance(People.class.getClassLoader(), new Class[]{People.class}, new ProxyHandler(new Jason()));
 		people.eat();
+		System.out.println("People's actual class:" + people.getClass().getName());
 		System.out.println("Game over!");
-		createProxyFile();
+		//createProxyFile();
 	}
 	
 	public static void createProxyFile() throws IOException{
