@@ -47,8 +47,8 @@ public class MyProxy {
 					+ getMethodStr(methods, interfs) + rt + "}";
 			
 			// 2.类生成文件
-			String fileName = "D:/Younge/Android/eclipse-java-neon-M4-win32-x86_64"
-					+ "/workspace/Android_internet/JavaProxy/src/club/younge/proxy/self/$Proxy0.java";
+			String fileName = "E:/GitLocal/Java/JavaProxy/JavaProxy"  //请务必注意文件路径是否正确，检查您的工程目录
+					+ "/src/club/younge/proxy/self/$Proxy0.java";
 			File file = new File(fileName);
 			FileWriter fileWriter = new FileWriter(file);
 
@@ -65,9 +65,9 @@ public class MyProxy {
 			stdFileMgr.close();
 			//file.delete(); //编译后可将该文件删除，造成与JDK动态代理一样的效果
 			
-			// 4.把class字节码加载到内存中
-			MyClassLoader classLoader2 = new MyClassLoader("D:/Younge/Android/eclipse-java-neon-M4-win32-x86_64"
-					+ "/workspace/Android_internet/JavaProxy/src/club/younge/proxy/self/");
+			// 4.把class字节码加载到内存中  ////请务必注意文件路径是否正确，检查您的工程目录
+			MyClassLoader classLoader2 = new MyClassLoader("E:/GitLocal/Java/JavaProxy/JavaProxy"
+					+ "/src/club/younge/proxy/self/");
 			Class proxy0Class = classLoader2.findClass("$Proxy0");
 			Constructor constructor = proxy0Class.getConstructor(MyInvocationHandler.class);
 			Object object = constructor.newInstance(invocationHandler);
